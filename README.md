@@ -106,7 +106,8 @@ O modelo LLM (GPT-4o-mini) é o motor de raciocínio do agente.
 7.  Selecione **Implantar**.
 8.  Acesse a página de detalhes da implantação e selecione **Abrir no playground**.
 
-`` (`Criação do agente/criacao-dos-recursos.jpg`)
+![Criação do agente](/Criação do agente/criacao-dos-recursos.jpg)
+![teste](/Criação do agente/criacao-dos-recursos.jpg)
 
 ### 4) Criar um Agente no Foundry
 
@@ -167,12 +168,11 @@ Para garantir que o agente seja preciso e utilize modelos internos da agência, 
 
 O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar os documentos de conhecimento e gerar a resposta:
 
-` (`Fluxo/fluxo.jpg`)
+![Fluxo do Agente](/Fluxo/fluxo.jpg)
 
 ### Fluxo de Funcionamento
 
-[Image of Agent Flowchart]
-` (`Fluxo/flowchat.jpg`)
+![Fluxo do funcionamento](/Fluxo/flowchart.jpg)
 
 1.  **Usuário envia comando:** O usuário solicita um briefing específico com informações iniciais.
 2.  **Agente recebe o comando** pelo chat.
