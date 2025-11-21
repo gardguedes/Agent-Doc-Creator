@@ -106,32 +106,33 @@ O modelo LLM (GPT-4o-mini) é o motor de raciocínio do agente.
 7.  Selecione **Implantar**.
 8.  Acesse a página de detalhes da implantação e selecione **Abrir no playground**.
 
-![Criação do agente](/Criação do agente/criacao-dos-recursos.jpg)
-![teste](/Criação do agente/criacao-dos-recursos.jpg)
+
+<br>**Tela do Grupo de Recursos e o Recurso do AI Foundry**<br>
+
+![Criação do agente](/Criacao-do-agente/criacao-dos-recursos.jpg)
 
 ### 4) Criar um Agente no Foundry
 
 #### Passo 1 – Criação e Configuração
 
 1.  No projeto do Foundry, abra **Criar e personalizar** e clique em **Agentes**.
-2.  Na tela "Criar e depurar seus agentes", clique em **+ Novo agente**.
-    **Print:** `
+2.  Na tela "Criar e depurar seus agentes", clique em **+ Novo agente**.<br><br>
 
-[Image of agent creation screen]
-`` (`Criação do agente/criar-01-agent-primeiro-comando.jpg`)
+![Criação do agente](/Criacao-do-agente/criar-01-agent-primeiro-comando.jpg)<br><br>
+
 3.  No menu à direita em "Configuração" defina os campos:
     * **Nome do agente:** `AgentDocCreator`
     * **Implantação:** `gpt-4o-mini-2`
     * **Descrição do Agente:** "Agente que criar documentos relacionados ao atendimento de clientes e à execução de serviços de marketing."
-    * **Temperatura:** `0.3` - Controla a aleatoriedade. Abaixar a temperatura significa que o modelo produzirá respostas mais repetitivas e determinísticas. Aumentar a temperatura resultará em respostas mais inesperadas ou criativas.
-    * **Top P:** `0.8` - Controla a aleatoriedade, mas usa um método diferente. Abaixar o Top P restringirá a seleção de tokens do modelo para tokens mais prováveis. Aumentar o Top P permitirá que o modelo escolha tokens com alta e baixa probabilidade.
+    * **Temperatura:** `0.3` - *Controla a aleatoriedade. Abaixar a temperatura significa que o modelo produzirá respostas mais repetitivas e determinísticas. Aumentar a temperatura resultará em respostas mais inesperadas ou criativas.*
+    * **Top P:** `0.8` - *Controla a aleatoriedade, mas usa um método diferente. Abaixar o Top P restringirá a seleção de tokens do modelo para tokens mais prováveis. Aumentar o Top P permitirá que o modelo escolha tokens com alta e baixa probabilidade.*
 
 
 #### Passo 2 – Ajuste das Instruções (System Prompt)
 
-As instruções foram ajustadas para focar apenas nos documentos de briefing, acrescentando responsabilidades detalhadas e regras específicas para o contexto de uma agência de marketing:
+As instruções foram ajustadas para focar apenas nos documentos de briefing, acrescentando responsabilidades detalhadas e regras específicas para o contexto de uma agência de marketing:<br><br>
 
-`` (`Criação do agente/criar-02-ajustando-o-prompt.jpg`)
+![Ajuste das Instruções](/Criacao-do-agente/criar-02-ajustando-o-prompt.jpg)<br><br>
 
 **Instrução Final (System Prompt):**
 "Você é um Analista de Marketing atuando em uma agência de marketing digital. Sua função é criar documentos profissionais relacionados ao atendimento de clientes e à execução de serviços de marketing. Você não responde perguntas sobre qualquer outro assunto. Você criar documentos profissionais relacionados aos serviços de marketing.
@@ -156,23 +157,26 @@ As instruções foram ajustadas para focar apenas nos documentos de briefing, ac
 #### Passo 3 – Adicionar Conhecimento (RAG)
 
 Para garantir que o agente seja preciso e utilize modelos internos da agência, foram incluídos documentos de briefing como base de conhecimento (RAG).
-1.  Na tela de configuração do Agente, vá até **Conhecimento** e clique em **+Adicionar**.
-` (`Criação do agente/criar-03-conhecimento.jpg`)
+1.  Na tela de configuração do Agente, vá até **Conhecimento** e clique em **+Adicionar**.<br>
+
+![Adicionar Conhecimento](/Criacao-do-agente/criar-03-conhecimento.jpg)<br><br>
+
 2.  Clicar em **Arquivos**. Em **Adicionar Arquivos** selecione **Carregar local** e clique em **Selecionar arquivo local**.
-3.  Foram incluídos modelos de briefing do cliente, site e tráfego pago. Clique em **Carregar** e **Salvar**.
-` (`Criação do agente/criar-04-arquivos.jpg`)
+3.  Foram incluídos modelos de briefing do cliente, site e tráfego pago. Clique em **Carregar** e **Salvar**.<br>
+
+![Adicionar arquivos](/Criacao-do-agente/criar-04-arquivos.jpg)<br><br>
 
 ***
 
 ## ➡️ Fluxo do Agente
 
-O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar os documentos de conhecimento e gerar a resposta:
+O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar os documentos de conhecimento e gerar a resposta: <br>
 
-![Fluxo do Agente](/Fluxo/fluxo.jpg)
+![Fluxo do Agente](/Fluxo/fluxo.jpg)<br><br>
 
-### Fluxo de Funcionamento
+### Fluxo de Funcionamento<br>
 
-![Fluxo do funcionamento](/Fluxo/flowchart.jpg)
+![Fluxo do funcionamento](/Fluxo/flowchart.jpg)<br><br>
 
 1.  **Usuário envia comando:** O usuário solicita um briefing específico com informações iniciais.
 2.  **Agente recebe o comando** pelo chat.
@@ -186,40 +190,37 @@ O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar 
 
 ### 1) Execução e Validação
 
-1.  **Recebe o comando do usuário:**
-    ` (`Execução e Teste/02-execucao.jpg`)
-2.  **Gera a resposta** (Documento + Checklist + Solicitações):
-    ` (`Execução e Teste/03-execucao-01.jpg`), `` (`Execução e Teste/03-execucao-02.jpg`), `` (`Execução e Teste/03-execucao-03.jpg`), `` (`Execução e Teste/03-execucao-04.jpg`), `` (`Execução e Teste/03-execucao-05.jpg`)
+1.  **Recebe o comando do usuário:** <br><br>
+![Recebe o comando](Execução-e-Teste/02-execucao.jpg)<br><br>
+2.  **Gera a resposta** (Documento + Checklist + Solicitações):<br><br>
+![Recebe o comando](Execução-e-Teste/03-execucao-01.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-02.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-03.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-04.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-05.jpg)<br><br>
 3.  **Detalhes do Thread Logs:** Os **Thread Logs** mostram o passo a passo de raciocínio do agente, incluindo a consulta e o uso dos arquivos de conhecimento para fundamentar a resposta.
-    **Prints do Raciocínio (Thread Logs):** `` (`Execução e Teste/thread-log-01.jpg`), `` (`Execução e Teste/thread-log-02.jpg`), `` (`Execução e Teste/thread-log-03.jpg`)
-    **Prints da Consulta dos arquivos:** `
-[Image of RAG query 1]
-` (`execução e teste/thread-log-04.jpg`), `` (`Execução e Teste/thread-log-05.jpg`), `` (`Execução e Teste/thread-log-06.jpg`)
-    **Print da Resposta:** `` (`Execução e Teste/thread-log-07.jpg`)
+    **Raciocínio (Thread Logs):** <br><br> ![Thread Logs](Execução-e-Teste/thread-log-01.jpg), ![Thread Logs](Execução-e-Teste/thread-log-02.jpg), ![Thread Logs](Execução-e-Teste/thread-log-03.jpg)<br><br>
+    **Consulta dos arquivos:** <br><br>
+![Thread Logs](Execução-e-Teste/thread-log-04.jpg), ![Thread Logs](Execução-e-Teste/thread-log-05.jpg), ![Thread Logs](Execução-e-Teste/thread-log-06.jpg)
+    **Resposta:** <br><br> ![Thread Logs](Execução-e-Teste/thread-log-07.jpg)<br><br>
 
 ### 2) Testando com um Novo Comando
 
 O agente demonstra consistência e capacidade de adaptar o briefing a um novo cenário:
-**Novo Teste:** `
+**Novo Teste:** <br><br>
+![Novo comando](Execução-e-Teste/nova-pergunta-01.jpg)<br><br>
 
-[Image of new command]
-`` (`Execução e teste/nova-pergunta-01.jpg`), `
-
-[Image of new response part 1]
-`` (`Execução e Teste/nova-pergunta-02.jpg`), `` (`Execução e Teste/nova-pergunta-03.jpg`)
-**Print do Thread Logs:** `` (`Execução e Teste/nova-pergunta-04.jpg`)
+**Respostas:** <br><br>
+![Respostas](Execução-e-Teste/nova-pergunta-02.jpg), ![Respostas](Execução-e-Teste/nova-pergunta-03.jpg)<br><br>
+**Thread Logs:** <br><br> ![Respostas](Execução-e-Teste/nova-pergunta-04.jpg)<br><br>
 
 ### 3) Testando Comando Fora do Escopo do Agente
 
 Testes fora do escopo são vitais para validar os limites e as regras do agente.
-* **Solicitação:** Criar um **contrato de serviço**, o que não era permitido.
-`` (`Execução e Teste/fora-do-escopo-01.jpg`)
+* **Solicitação:** Criar um **contrato de serviço**, o que não era permitido.<br><br>
+![Respostas](Execução-e-Teste/fora-do-escopo-01.jpg)<br><br>
 
-* **Resultado Inicial:** O agente inicialmente aceitou, desrespeitando o foco em apenas **briefings**.
-    **Solicitação Fora de Escopo:** `` (`Execução e Teste/fora-do-escopo-02.jpg`), `` (`Execução e Teste/fora-do-escopo-03.jpg`), `` (`Execução e Teste/fora-do-escopo-04.jpg`), `` (`Execução e Teste/fora-do-escopo-05.jpg`), `` (`Execução e Teste/fora-do-escopo-06.jpg`), `` (`Execução e Teste/fora-do-escopo-07.jpg`), `` (`Execução e Teste/fora-do-escopo-08.jpg`)
+* **Resultado Inicial:** O agente inicialmente aceitou, desrespeitando o foco em apenas **briefings**. <br>
+    **Solicitação Fora de Escopo:** <br><br> ![Fora do escopo](Execução-e-Teste/fora-do-escopo-02.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-03.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-04.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-05.jpg),![Fora do escopo](Execução-e-Teste/fora-do-escopo-06.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-07.jpg) <br><br>
 
 * **Ajuste:** Foi necessário incluir regras explícitas nas instruções para que o agente recusasse a criação de documentos não relacionados a briefing, garantindo que ele cumpra estritamente sua função.
-    **Ajuste de Regras:** `` (`Execução e Teste/fora-do-escopo-09-ajuste-do-prompt.jpg`)
+    **Ajuste de Regras:** <br><br> ![Ajuste de regras](Execução-e-Teste/fora-do-escopo-08-ajuste-do-prompt.jpg)<br><br>
 
 ***
 
