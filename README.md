@@ -1,23 +1,23 @@
 # Desafio do Azure Frontier Girls – AI Foundry
 
-## 📌 README Completo
+## README Completo
 
 ***
 
 ## 📑 Sumário
 
 * [Introdução](#introdução)
-* [🧠 Breve Explicação](#breve-explicação)
+* [Breve Explicação](#breve-explicação)
     * [O que é um Agente de IA](#o-que-é-um-agente-de-ia)
     * [Modelos LLM – Large Language Models](#modelos-llm--large-language-models)
     * [Azure AI Foundry – AI Agent Services](#azure-ai-foundry--ai-agent-services)
-* [🚀 Descrição do Projeto](#descrição-do-projeto)
-* [🎯 Objetivo do Agente](#objetivo-do-agente)
-* [🛠️ Criação do Agente](#criação-do-agente)
-* [➡️ Fluxo do Agente](#fluxo-do-agente)
-* [⚙️ Execução do Agente](#execução-do-agente)
-* [✅ Conclusão](#conclusão)
-* [🔗 Links de Referências](#links-de-referências)
+* [Descrição do Projeto](#descrição-do-projeto)
+* [Objetivo do Agente](#objetivo-do-agente)
+* [Criação do Agente](#criação-do-agente)
+* [Fluxo do Agente](#fluxo-do-agente)
+* [Execução do Agente](#execução-do-agente)
+* [Conclusão](#conclusão)
+* [Links de Referências](#links-de-referências)
 
 ***
 
@@ -29,7 +29,7 @@ O objetivo é demonstrar como construir um agente capaz de gerar documentos esse
 
 ***
 
-## 🧠 Breve Explicação
+## Breve Explicação
 
 ### O que é um Agente de IA
 
@@ -51,7 +51,7 @@ O **Azure AI Foundry** é uma plataforma confiável da Microsoft que capacita os
 
 ***
 
-## 🚀 Descrição do Projeto
+## Descrição do Projeto
 
 O projeto consiste na criação de um agente de IA chamado **AgentDocCreator**. Sua função é criar documentos profissionais relacionados ao atendimento de clientes e à execução de serviços de marketing, incluindo **checklists** e avisos de informações importantes necessárias para a prestação do serviço.
 
@@ -65,7 +65,7 @@ O agente centraliza a criação e validação desses documentos, garantindo que 
 
 ***
 
-## 🎯 Objetivo do Agente
+## Objetivo do Agente
 
 * Criar documentos de briefing **completos e profissionais** (Site, Tráfego Pago, Redes Sociais).
 * **Verificar automaticamente** se informações cruciais estão faltando.
@@ -74,7 +74,7 @@ O agente centraliza a criação e validação desses documentos, garantindo que 
 
 ***
 
-## 🛠️ Criação do Agente
+## Criação do Agente
 
 O **AgentDocCreator** foi desenvolvido no Azure AI Foundry seguindo as etapas de infraestrutura e configuração abaixo:
 
@@ -109,14 +109,14 @@ O modelo LLM (GPT-4o-mini) é o motor de raciocínio do agente.
 
 <br>**Tela do Grupo de Recursos e o Recurso do AI Foundry**<br>
 
-![Criação do agente](/Criacao-do-agente/criacao-dos-recursos.jpg)
+![Criação do agente](/Criacao-do-agente/criacao-dos-recursos.jpg) <br><br>
 
 ### 4) Criar um Agente no Foundry
 
 #### Passo 1 – Criação e Configuração
 
 1.  No projeto do Foundry, abra **Criar e personalizar** e clique em **Agentes**.
-2.  Na tela "Criar e depurar seus agentes", clique em **+ Novo agente**.<br><br>
+2.  Na tela "Criar e depurar seus agentes", clique em **+ Novo agente**.<br>
 
 ![Criação do agente](/Criacao-do-agente/criar-01-agent-primeiro-comando.jpg) <br><br>
 
@@ -168,15 +168,13 @@ Para garantir que o agente seja preciso e utilize modelos internos da agência, 
 
 ***
 
-## ➡️ Fluxo do Agente
+## Fluxo do Agente
 
 O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar os documentos de conhecimento e gerar a resposta: <br>
 
 ![Fluxo do Agente](/Fluxo/fluxo.jpg)<br><br>
 
 ### Fluxo de Funcionamento<br>
-
-![Fluxo do funcionamento](/Fluxo/funcionamento.jpg) <br><br>
 
 1.  **Usuário envia comando:** O usuário solicita um briefing específico com informações iniciais.
 2.  **Agente recebe o comando** pelo chat.
@@ -186,40 +184,45 @@ O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar 
 
 ***
 
-## ⚙️ Execução do Agente
+## Execução do Agente
 
 ### 1) Execução e Validação
 
 1.  **Recebe o comando do usuário:** <br><br>
 ![Recebe o comando](Execução-e-Teste/02-execucao.jpg) <br><br>
-2.  **Gera a resposta** (Documento + Checklist + Solicitações):<br><br>
+
+<br> 2.  **Gera a resposta** (Documento + Checklist + Solicitações):<br><br>
 ![Recebe o comando](Execução-e-Teste/03-execucao-01.jpg) <br><br>
 ![Recebe o comando](Execução-e-Teste/03-execucao-02.jpg) <br><br>
 ![Recebe o comando](Execução-e-Teste/03-execucao-03.jpg) <br><br>
 ![Recebe o comando](Execução-e-Teste/03-execucao-04.jpg) <br><br>
 ![Recebe o comando](Execução-e-Teste/03-execucao-05.jpg) <br><br>
-4.  **Detalhes do Thread Logs:** Os **Thread Logs** mostram o passo a passo de raciocínio do agente, incluindo a consulta e o uso dos arquivos de conhecimento para fundamentar a resposta.
-    **Raciocínio (Thread Logs):** <br><br>
+
+<br> 3.  **Detalhes do Thread Logs:** Os **Thread Logs** mostram o passo a passo de raciocínio do agente, incluindo a consulta e o uso dos arquivos de conhecimento para fundamentar a resposta.
+    <br> **Raciocínio (Thread Logs):** <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-01.jpg) <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-02.jpg) <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-03.jpg) <br><br>
-    **Consulta dos arquivos:** <br><br>
+    
+   <br> **Consulta dos arquivos:** <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-04.jpg) <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-05.jpg) <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-06.jpg) <br><br>
-    **Resposta:** <br><br>
+   
+   <br>  **Resposta:** <br><br>
     ![Thread Logs](Execução-e-Teste/thread-log-07.jpg) <br><br>
 
 ### 2) Testando com um Novo Comando
 
 O agente demonstra consistência e capacidade de adaptar o briefing a um novo cenário:
-**Novo Teste:** <br><br>
+<br> **Novo Teste:** <br><br>
 ![Novo comando](Execução-e-Teste/nova-pergunta-01.jpg) <br><br>
 
-**Respostas:** <br><br>
+<br> **Respostas:** <br><br>
 ![Respostas](Execução-e-Teste/nova-pergunta-02.jpg) <br><br>
 ![Respostas](Execução-e-Teste/nova-pergunta-03.jpg) <br><br>
-**Thread Logs:** <br><br> 
+
+<br>**Thread Logs:** <br><br> 
 ![Respostas](Execução-e-Teste/nova-pergunta-04.jpg) <br><br>
 
 ### 3) Testando Comando Fora do Escopo do Agente
@@ -228,8 +231,9 @@ Testes fora do escopo são vitais para validar os limites e as regras do agente.
 * **Solicitação:** Criar um **contrato de serviço**, o que não era permitido.<br><br>
 ![Respostas](Execução-e-Teste/fora-do-escopo-01.jpg) <br><br>
 
-* **Resultado Inicial:** O agente inicialmente aceitou, desrespeitando o foco em apenas **briefings**. <br>
-    **Solicitação Fora de Escopo:** <br><br>
+* **Resultado Inicial:** O agente inicialmente aceitou, desrespeitando o foco em apenas **briefings**.
+
+<br> **Solicitação Fora de Escopo:** <br><br>
   ![Fora do escopo](Execução-e-Teste/fora-do-escopo-02.jpg) <br><br>
   ![Fora do escopo](Execução-e-Teste/fora-do-escopo-03.jpg) <br><br>
   ![Fora do escopo](Execução-e-Teste/fora-do-escopo-04.jpg) <br><br>
@@ -238,11 +242,11 @@ Testes fora do escopo são vitais para validar os limites e as regras do agente.
   ![Fora do escopo](Execução-e-Teste/fora-do-escopo-07.jpg) <br><br>
 
 * **Ajuste:** Foi necessário incluir regras explícitas nas instruções para que o agente recusasse a criação de documentos não relacionados a briefing, garantindo que ele cumpra estritamente sua função.
-    **Ajuste de Regras:** <br><br> ![Ajuste de regras](Execução-e-Teste/fora-do-escopo-08-ajuste-do-prompt.jpg) <br><br>
+  <br> **Ajuste de Regras:** <br><br> ![Ajuste de regras](Execução-e-Teste/fora-do-escopo-08-ajuste-do-prompt.jpg) <br><br>
 
 ***
 
-## ✅ Conclusão
+## Conclusão
 
 O **AgentDocCreator**, desenvolvido no Azure AI Foundry, é uma solução de IA que atende diretamente ao problema de organização e completude de informações em uma agência de marketing.
 
@@ -257,7 +261,7 @@ Esse agente é essencial para agências que buscam **agilidade, precisão e orga
 
 ***
 
-## 🔗 Links de Referências
+## Links de Referências
 
 * [Portal do Azure](https://portal.azure.com)
 * [Azure AI Foundry Portal](https://ai.azure.com)
