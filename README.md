@@ -6,7 +6,7 @@
 
 ## 📑 Sumário
 
-* [💡 Introdução](#introdução)
+* [Introdução](#introdução)
 * [🧠 Breve Explicação](#breve-explicação)
     * [O que é um Agente de IA](#o-que-é-um-agente-de-ia)
     * [Modelos LLM – Large Language Models](#modelos-llm--large-language-models)
@@ -21,7 +21,7 @@
 
 ***
 
-## 💡 Introdução
+## Introdução
 
 Este repositório apresenta o desenvolvimento completo de um **Agente de IA criado no Azure AI Foundry**, como parte do **Desafio Azure Frontier Girls**.
 
@@ -118,7 +118,7 @@ O modelo LLM (GPT-4o-mini) é o motor de raciocínio do agente.
 1.  No projeto do Foundry, abra **Criar e personalizar** e clique em **Agentes**.
 2.  Na tela "Criar e depurar seus agentes", clique em **+ Novo agente**.<br><br>
 
-![Criação do agente](/Criacao-do-agente/criar-01-agent-primeiro-comando.jpg)<br><br>
+![Criação do agente](/Criacao-do-agente/criar-01-agent-primeiro-comando.jpg) <br><br>
 
 3.  No menu à direita em "Configuração" defina os campos:
     * **Nome do agente:** `AgentDocCreator`
@@ -132,7 +132,7 @@ O modelo LLM (GPT-4o-mini) é o motor de raciocínio do agente.
 
 As instruções foram ajustadas para focar apenas nos documentos de briefing, acrescentando responsabilidades detalhadas e regras específicas para o contexto de uma agência de marketing:<br><br>
 
-![Ajuste das Instruções](/Criacao-do-agente/criar-02-ajustando-o-prompt.jpg)<br><br>
+![Ajuste das Instruções](/Criacao-do-agente/criar-02-ajustando-o-prompt.jpg) <br><br>
 
 **Instrução Final (System Prompt):**
 "Você é um Analista de Marketing atuando em uma agência de marketing digital. Sua função é criar documentos profissionais relacionados ao atendimento de clientes e à execução de serviços de marketing. Você não responde perguntas sobre qualquer outro assunto. Você criar documentos profissionais relacionados aos serviços de marketing.
@@ -159,12 +159,12 @@ As instruções foram ajustadas para focar apenas nos documentos de briefing, ac
 Para garantir que o agente seja preciso e utilize modelos internos da agência, foram incluídos documentos de briefing como base de conhecimento (RAG).
 1.  Na tela de configuração do Agente, vá até **Conhecimento** e clique em **+Adicionar**.<br>
 
-![Adicionar Conhecimento](/Criacao-do-agente/criar-03-conhecimento.jpg)<br><br>
+![Adicionar Conhecimento](/Criacao-do-agente/criar-03-conhecimento.jpg) <br><br>
 
 2.  Clicar em **Arquivos**. Em **Adicionar Arquivos** selecione **Carregar local** e clique em **Selecionar arquivo local**.
 3.  Foram incluídos modelos de briefing do cliente, site e tráfego pago. Clique em **Carregar** e **Salvar**.<br>
 
-![Adicionar arquivos](/Criacao-do-agente/criar-04-arquivos.jpg)<br><br>
+![Adicionar arquivos](/Criacao-do-agente/criar-04-arquivos.jpg) <br><br>
 
 ***
 
@@ -176,7 +176,7 @@ O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar 
 
 ### Fluxo de Funcionamento<br>
 
-![Fluxo do funcionamento](/Fluxo/flowchart.jpg)<br><br>
+![Fluxo do funcionamento](/Fluxo/funcionamento.jpg) <br><br>
 
 1.  **Usuário envia comando:** O usuário solicita um briefing específico com informações iniciais.
 2.  **Agente recebe o comando** pelo chat.
@@ -191,36 +191,54 @@ O agente utiliza a técnica RAG (Retrieval-Augmented Generation) para consultar 
 ### 1) Execução e Validação
 
 1.  **Recebe o comando do usuário:** <br><br>
-![Recebe o comando](Execução-e-Teste/02-execucao.jpg)<br><br>
+![Recebe o comando](Execução-e-Teste/02-execucao.jpg) <br><br>
 2.  **Gera a resposta** (Documento + Checklist + Solicitações):<br><br>
-![Recebe o comando](Execução-e-Teste/03-execucao-01.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-02.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-03.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-04.jpg), ![Recebe o comando](Execução-e-Teste/03-execucao-05.jpg)<br><br>
-3.  **Detalhes do Thread Logs:** Os **Thread Logs** mostram o passo a passo de raciocínio do agente, incluindo a consulta e o uso dos arquivos de conhecimento para fundamentar a resposta.
-    **Raciocínio (Thread Logs):** <br><br> ![Thread Logs](Execução-e-Teste/thread-log-01.jpg), ![Thread Logs](Execução-e-Teste/thread-log-02.jpg), ![Thread Logs](Execução-e-Teste/thread-log-03.jpg)<br><br>
+![Recebe o comando](Execução-e-Teste/03-execucao-01.jpg) <br><br>
+![Recebe o comando](Execução-e-Teste/03-execucao-02.jpg) <br><br>
+![Recebe o comando](Execução-e-Teste/03-execucao-03.jpg) <br><br>
+![Recebe o comando](Execução-e-Teste/03-execucao-04.jpg) <br><br>
+![Recebe o comando](Execução-e-Teste/03-execucao-05.jpg) <br><br>
+4.  **Detalhes do Thread Logs:** Os **Thread Logs** mostram o passo a passo de raciocínio do agente, incluindo a consulta e o uso dos arquivos de conhecimento para fundamentar a resposta.
+    **Raciocínio (Thread Logs):** <br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-01.jpg) <br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-02.jpg) <br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-03.jpg) <br><br>
     **Consulta dos arquivos:** <br><br>
-![Thread Logs](Execução-e-Teste/thread-log-04.jpg), ![Thread Logs](Execução-e-Teste/thread-log-05.jpg), ![Thread Logs](Execução-e-Teste/thread-log-06.jpg)
-    **Resposta:** <br><br> ![Thread Logs](Execução-e-Teste/thread-log-07.jpg)<br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-04.jpg) <br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-05.jpg) <br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-06.jpg) <br><br>
+    **Resposta:** <br><br>
+    ![Thread Logs](Execução-e-Teste/thread-log-07.jpg) <br><br>
 
 ### 2) Testando com um Novo Comando
 
 O agente demonstra consistência e capacidade de adaptar o briefing a um novo cenário:
 **Novo Teste:** <br><br>
-![Novo comando](Execução-e-Teste/nova-pergunta-01.jpg)<br><br>
+![Novo comando](Execução-e-Teste/nova-pergunta-01.jpg) <br><br>
 
 **Respostas:** <br><br>
-![Respostas](Execução-e-Teste/nova-pergunta-02.jpg), ![Respostas](Execução-e-Teste/nova-pergunta-03.jpg)<br><br>
-**Thread Logs:** <br><br> ![Respostas](Execução-e-Teste/nova-pergunta-04.jpg)<br><br>
+![Respostas](Execução-e-Teste/nova-pergunta-02.jpg) <br><br>
+![Respostas](Execução-e-Teste/nova-pergunta-03.jpg) <br><br>
+**Thread Logs:** <br><br> 
+![Respostas](Execução-e-Teste/nova-pergunta-04.jpg) <br><br>
 
 ### 3) Testando Comando Fora do Escopo do Agente
 
 Testes fora do escopo são vitais para validar os limites e as regras do agente.
 * **Solicitação:** Criar um **contrato de serviço**, o que não era permitido.<br><br>
-![Respostas](Execução-e-Teste/fora-do-escopo-01.jpg)<br><br>
+![Respostas](Execução-e-Teste/fora-do-escopo-01.jpg) <br><br>
 
 * **Resultado Inicial:** O agente inicialmente aceitou, desrespeitando o foco em apenas **briefings**. <br>
-    **Solicitação Fora de Escopo:** <br><br> ![Fora do escopo](Execução-e-Teste/fora-do-escopo-02.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-03.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-04.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-05.jpg),![Fora do escopo](Execução-e-Teste/fora-do-escopo-06.jpg), ![Fora do escopo](Execução-e-Teste/fora-do-escopo-07.jpg) <br><br>
+    **Solicitação Fora de Escopo:** <br><br>
+  ![Fora do escopo](Execução-e-Teste/fora-do-escopo-02.jpg) <br><br>
+  ![Fora do escopo](Execução-e-Teste/fora-do-escopo-03.jpg) <br><br>
+  ![Fora do escopo](Execução-e-Teste/fora-do-escopo-04.jpg) <br><br>
+  ![Fora do escopo](Execução-e-Teste/fora-do-escopo-05.jpg) <br><br>
+  ![Fora do escopo](Execução-e-Teste/fora-do-escopo-06.jpg) <br><br>
+  ![Fora do escopo](Execução-e-Teste/fora-do-escopo-07.jpg) <br><br>
 
 * **Ajuste:** Foi necessário incluir regras explícitas nas instruções para que o agente recusasse a criação de documentos não relacionados a briefing, garantindo que ele cumpra estritamente sua função.
-    **Ajuste de Regras:** <br><br> ![Ajuste de regras](Execução-e-Teste/fora-do-escopo-08-ajuste-do-prompt.jpg)<br><br>
+    **Ajuste de Regras:** <br><br> ![Ajuste de regras](Execução-e-Teste/fora-do-escopo-08-ajuste-do-prompt.jpg) <br><br>
 
 ***
 
